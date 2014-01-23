@@ -1,0 +1,48 @@
+\documentclass{article}
+\usepackage[usenames]{color}
+\usepackage{gastex}
+
+\begin{document} % Loop width and height
+
+\begin{center}
+\unitlength 0.50mm
+\begin{picture}(80,95)
+\gasset{AHnb=0}
+\gasset{Nw=10,Nh=10,Nmr=5}
+\node(1)(10,30){$f$}
+\node(2)(20,10){$t$}
+\node(3)(40,10){$f$}
+\node(4)(30,30){$\lor$}
+  \drawedge(2,4){}
+  \drawedge(3,4){}
+\node(5)(20,50){$\land$}
+  \drawedge(1,5){}
+  \drawedge(4,5){}
+\node(6)(50,30){$t$}
+\node(7)(70,30){$t$}
+\node(8)(60,50){$\land$}
+  \drawedge(6,8){}
+  \drawedge(7,8){}
+\node(9)(40,70){$\land$}
+  \drawedge(5,9){}
+  \drawedge(8,9){}
+\node(10)(70,70){$f$}
+\node(11)(55,90){$\land$}
+  \drawedge(9,11){}
+  \drawedge(10,11){}
+\gasset{ExtNL=y,NLdist=1,NLangle=20}
+   \nodelabel(1){1}
+   \nodelabel(2){2}
+   \nodelabel(3){3}
+   \nodelabel(4){4}
+   \nodelabel(5){5}
+   \nodelabel(6){6}
+   \nodelabel(7){7}
+   \nodelabel(8){8}
+   \nodelabel(9){9}
+   \nodelabel(10){10}
+   \nodelabel(11){11}
+\end{picture}
+\end{center}
+
+\end{document} 

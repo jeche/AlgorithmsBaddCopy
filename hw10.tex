@@ -1,0 +1,99 @@
+\documentclass[11pt]{article}
+
+\usepackage{times,mathptm}
+\usepackage{pifont}
+\usepackage{exscale}
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{epsfig}
+\usepackage{alltt}
+\usepackage{tikz}
+\usetikzlibrary{trees,shapes,snakes}
+
+\textwidth 6.5in
+\textheight 9in
+\oddsidemargin -0.1in
+\topmargin -0.6in
+
+\parindent 0pt
+\parskip 0pt
+
+\begin{document}
+\rightline{Jessica Chen}
+\begin{LARGE}
+\centerline {\bf CSCI 303: Algorithms, HW 9}
+\end{LARGE}
+\vskip 0.25cm
+\centerline{Due: 3:00 pm, Friday, 11/2}
+
+\begin{enumerate}
+\item Problem 1\\
+\begin{enumerate}
+\item Adjacency Matrix
+\begin{tabular}{ccccccc}
+0&0&0&1&1&0&1\\
+0&0&1&0&1&1&0\\
+0&0&0&1&1&0&0\\
+0&0&0&0&1&0&0\\
+0&0&0&0&0&1&1\\
+0&0&0&0&0&0&1\\
+0&0&0&0&0&0&0\\
+\end{tabular}
+\item Adjacency List
+\begin{tabular}{c|ccccccc|}
+
+$v_1$&$v_4$&$v_5$&$v_7$&&&\\
+\hline
+$v_2$&$v_3$&$v_5$&$v_6$&&&\\
+\hline
+$v_3$&$v_4$&$v_5$&&&&\\
+\hline
+$v_4$&$v_5$&&&&&\\
+\hline
+$v_5$&$v_6$&$v_7$&&&&\\
+\hline
+$v_6$&$v_7$&&&&&\\
+\hline
+$v_7$&&&&&&\\
+\end{tabular}
+\item The graph is a directed acyclic graph.
+\end{enumerate}
+\item Problem 2
+
+(14 points)(b) Is the topological ordering produced during your execution in problem 2a the unique
+topological ordering for this graph? If so, explain why. If not, explain why not (giving
+an alternative topological ordering suffices). (1 point)
+(c) Does the use of the adjacency list, augmented with a queue, enforce a consistent outcome
+for topological sort? If so, explain why. If not, explain why not. Again, think like a
+computer! (1 point)
+\begin{enumerate}
+\item Topological sort
+\begin{tabular}{c|ccccccc}
+\hline
+Vertex& 1&2&3&4&5&6&7\\
+\hline
+$v_1$&0&0&0&1&1&0&1\\
+$v_2$&0&0&1&0&1&1&0\\
+$v_3$&0&0&0&1&1&0&0\\
+$v_4$&0&0&0&0&1&0&0\\
+$v_5$&0&0&0&0&0&1&1\\
+$v_6$&0&0&0&0&0&0&1\\
+$v_7$&0&0&0&0&0&0&0\\
+\end{tabular}{c|ccccccc}
+
+\begin{tabular}
+Indegree&\\
+\hline
+0&$v_1$&$v_2$\\
+1&$v_3$\\
+2&$v_4$&$v_6$\\
+3&$v_7$\\
+4&$v_5$
+\end{tabular}
+\end{enumerate}
+\item Problem 3
+
+\end{enumerate}
+
+
+\end{document}

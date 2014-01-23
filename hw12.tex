@@ -1,0 +1,368 @@
+\documentclass[11pt]{article}
+
+\usepackage{times,mathptm}
+\usepackage{pifont}
+\usepackage{exscale}
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{epsfig}
+\usepackage{fancyvrb}
+\usepackage{alltt}
+\usepackage{tikz}
+\usetikzlibrary{trees,shapes,snakes}
+
+\textwidth 6.5in
+\textheight 9in
+\oddsidemargin -0.1in
+\topmargin -0.6in
+
+\parindent 0pt
+\parskip 0pt
+
+\begin{document}
+\rightline{Jessica Chen}
+\rightline{Collaborators: Andrew Jones, Sujaan Joshi}
+\begin{LARGE}
+\centerline {\bf CSCI 303: Algorithms, HW 11}
+\end{LARGE}
+\vskip 0.25cm
+\centerline{Due: 3:00 pm, Wednesday, 12/7}
+
+\begin{enumerate}
+\item Problem 1\\
+\begin{enumerate}
+\item next fit
+\begin{enumerate}
+\item Bin 1: $\frac{18}{34}$\\
+\item Bin 1: $\frac{18}{34}, \frac{3}{34}$\\
+\item Bin 1: $\frac{18}{34}, \frac{3}{34}$\\
+Bin 2: $\frac{16}{34}$\\
+\item Bin 1: $\frac{18}{34}, \frac{3}{34}$\\
+Bin 2: $\frac{16}{34}, \frac{4}{34}$\\
+\item Bin 1: $\frac{18}{34}, \frac{3}{34}$\\
+Bin 2: $\frac{16}{34}, \frac{4}{34}$\\
+Bin 3: $\frac{22}{34}$
+\item Bin 1: $\frac{18}{34}, \frac{3}{34}$\\
+Bin 2: $\frac{16}{34}, \frac{4}{34}$\\
+Bin 3: $\frac{22}{34}, \frac{5}{34}$
+\item Bin 1: $\frac{18}{34}, \frac{3}{34}$\\
+Bin 2: $\frac{16}{34}, \frac{4}{34}$\\
+Bin 3: $\frac{22}{34}, \frac{5}{34}$\\
+Bin 4: $\frac{12}{34}$
+\item Bin 1: $\frac{18}{34}, \frac{3}{34}$\\
+Bin 2: $\frac{16}{34}, \frac{4}{34}$\\
+Bin 3: $\frac{22}{34}, \frac{5}{34}$\\
+Bin 4: $\frac{12}{34}, \frac{8}{34}$
+\item Bin 1: $\frac{18}{34}, \frac{3}{34}$\\
+Bin 2: $\frac{16}{34}, \frac{4}{34}$\\
+Bin 3: $\frac{22}{34}, \frac{5}{34}$\\
+Bin 4: $\frac{12}{34}, \frac{8}{34}$\\
+Bin 5: $\frac{20}{34}$
+\item Bin 1: $\frac{18}{34}, \frac{3}{34}$\\
+Bin 2: $\frac{16}{34}, \frac{4}{34}$\\
+Bin 3: $\frac{22}{34}, \frac{5}{34}$\\
+Bin 4: $\frac{12}{34}, \frac{8}{34}$\\
+Bin 5: $\frac{20}{34}, \frac{9}{34}$
+\item Bin 1: $\frac{18}{34}, \frac{3}{34}$\\
+Bin 2: $\frac{16}{34}, \frac{4}{34}$\\
+Bin 3: $\frac{22}{34}, \frac{5}{34}$\\
+Bin 4: $\frac{12}{34}, \frac{8}{34}$\\
+Bin 5: $\frac{20}{34}, \frac{9}{34}$
+Bin 6: $\frac{14}{34}$
+\item Bin 1: $\frac{18}{34}, \frac{3}{34}$\\
+Bin 2: $\frac{16}{34}, \frac{4}{34}$\\
+Bin 3: $\frac{22}{34}, \frac{5}{34}$\\
+Bin 4: $\frac{12}{34}, \frac{8}{34}$\\
+Bin 5: $\frac{20}{34}, \frac{9}{34}$
+Bin 6: $\frac{14}{34}, \frac{2}{34}$
+\end{enumerate}
+\item first fit
+\begin{enumerate}
+\item Bin 1: $\frac{18}{35}$\\
+\item Bin 1: $\frac{18}{35}, \frac{3}{34}$\\
+\item Bin 1: $\frac{18}{35}, \frac{3}{34}$\\
+Bin 2: $\frac{16}{34}$\\
+\item Bin 1: $\frac{18}{35}, \frac{3}{34}, \frac{4}{34}$\\
+Bin 2: $\frac{16}{34}$\\
+\item Bin 1: $\frac{18}{35}, \frac{3}{34}, \frac{4}{34}$\\
+Bin 2: $\frac{16}{34}$\\
+Bin 3: $\frac{22}{34}$\\
+\item Bin 1: $\frac{18}{35}, \frac{3}{34}, \frac{4}{34}, \frac{5}{34}$\\
+Bin 2: $\frac{16}{34}$\\
+Bin 3: $\frac{22}{34}$\\
+\item Bin 1: $\frac{18}{35}, \frac{3}{34}, \frac{4}{34}, \frac{5}{34}$\\
+Bin 2: $\frac{16}{34}, \frac{12}{34}$\\
+Bin 3: $\frac{22}{34}$\\
+\item Bin 1: $\frac{18}{35}, \frac{3}{34}, \frac{4}{34}, \frac{5}{34}$\\
+Bin 2: $\frac{16}{34}, \frac{12}{34}$\\
+Bin 3: $\frac{22}{34}, \frac{8}{34}$\\
+\item Bin 1: $\frac{18}{35}, \frac{3}{34}, \frac{4}{34}, \frac{5}{34}$\\
+Bin 2: $\frac{16}{34}, \frac{12}{34}$\\
+Bin 3: $\frac{22}{34}, \frac{8}{34}$\\
+Bin 4: $\frac{20}{34}$\\
+\item Bin 1: $\frac{18}{35}, \frac{3}{34}, \frac{4}{34}, \frac{5}{34}$\\
+Bin 2: $\frac{16}{34}, \frac{12}{34}$\\
+Bin 3: $\frac{22}{34}, \frac{8}{34}$\\
+Bin 4: $\frac{20}{34}, \frac{9}{34}$\\
+\item Bin 1: $\frac{18}{35}, \frac{3}{34}, \frac{4}{34}, \frac{5}{34}$\\
+Bin 2: $\frac{16}{34}, \frac{12}{34}$\\
+Bin 3: $\frac{22}{34}, \frac{8}{34}$\\
+Bin 4: $\frac{20}{34}, \frac{9}{34}$\\
+Bin 5: $\frac{14}{34}$
+\item Bin 1: $\frac{18}{35}, \frac{3}{34}, \frac{4}{34}, \frac{5}{34}, \frac{2}{34}$\\
+Bin 2: $\frac{16}{34}, \frac{12}{34}$\\
+Bin 3: $\frac{22}{34}, \frac{8}{34}$\\
+Bin 4: $\frac{20}{34}, \frac{9}{34}$\\
+Bin 5: $\frac{14}{34}$
+\end{enumerate}
+\item best fit
+\begin{enumerate}
+\item Bin 1: $\frac{18}{35}$\\
+\item Bin 1: $\frac{18}{35}, \frac{3}{34}$\\
+\item Bin 1: $\frac{18}{35}, \frac{3}{34}$\\
+Bin 2: $\frac{16}{34}$\\
+\item Bin 1: $\frac{18}{35}, \frac{3}{34}, \frac{4}{34}$\\
+Bin 2: $\frac{16}{34}$\\
+Bin 3: $\frac{22}{34}$\\
+\item Bin 1: $\frac{18}{35}, \frac{3}{34}, \frac{4}{34}, \frac{5}{34}$\\
+Bin 2: $\frac{16}{34}$\\
+Bin 3: $\frac{22}{34}$\\
+\item Bin 1: $\frac{18}{35}, \frac{3}{34}, \frac{4}{34}, \frac{5}{34}$\\
+Bin 2: $\frac{16}{34}$\\
+Bin 3: $\frac{22}{34}, \frac{12}{34}$\\
+\item Bin 1: $\frac{18}{35}, \frac{3}{34}, \frac{4}{34}, \frac{5}{34}$\\
+Bin 2: $\frac{16}{34}, \frac{8}{34}$\\
+Bin 3: $\frac{22}{34}, \frac{12}{34}$\\
+\item Bin 1: $\frac{18}{35}, \frac{3}{34}, \frac{4}{34}, \frac{5}{34}$\\
+Bin 2: $\frac{16}{34}, \frac{8}{34}$\\
+Bin 3: $\frac{22}{34}, \frac{12}{34}$\\
+Bin 4: $\frac{20}{34}$\\
+\item Bin 1: $\frac{18}{35}, \frac{3}{34}, \frac{4}{34}, \frac{5}{34}$\\
+Bin 2: $\frac{16}{34}, \frac{8}{34}, \frac{9}{34}$\\
+Bin 3: $\frac{22}{34}, \frac{12}{34}$\\
+Bin 4: $\frac{20}{34}$\\
+\item Bin 1: $\frac{18}{35}, \frac{3}{34}, \frac{4}{34}, \frac{5}{34}$\\
+Bin 2: $\frac{16}{34}, \frac{8}{34}, \frac{9}{34}$\\
+Bin 3: $\frac{22}{34}, \frac{12}{34}$\\
+Bin 4: $\frac{20}{34}, \frac{14}{34}$\\
+\item Bin 1: $\frac{18}{35}, \frac{3}{34}, \frac{4}{34}, \frac{5}{34}, \frac{2}{34}$\\
+Bin 2: $\frac{16}{34}, \frac{8}{34}, \frac{9}{34}$\\
+Bin 3: $\frac{22}{34}, \frac{12}{34}$\\
+Bin 4: $\frac{20}{34}, \frac{14}{34}$\\
+\end{enumerate}
+\item first fit decreasing
+\begin{enumerate}
+\item Bin 1: $\frac{22}{35}$
+\item Bin 1: $\frac{22}{35}$\\
+Bin 2: $\frac{20}{34}$
+\item Bin 1: $\frac{22}{35}$\\
+Bin 2: $\frac{20}{34}$\\
+Bin 3: $\frac{18}{34}$
+\item Bin 1: $\frac{22}{35}$\\
+Bin 2: $\frac{20}{34}$\\
+Bin 3: $\frac{18}{34}, \frac{16}{34}$
+\item Bin 1: $\frac{22}{35}$\\
+Bin 2: $\frac{20}{34}, \frac{14}{34}$\\
+Bin 3: $\frac{18}{34}, \frac{16}{34}$
+\item Bin 1: $\frac{22}{35}, \frac{12}{34}$\\
+Bin 2: $\frac{20}{34}, \frac{14}{34}$\\
+Bin 3: $\frac{18}{34}, \frac{16}{34}$
+\item Bin 1: $\frac{22}{35}, \frac{12}{34}$\\
+Bin 2: $\frac{20}{34}, \frac{14}{34}$\\
+Bin 3: $\frac{18}{34}, \frac{16}{34}$\\
+Bin 4: $\frac{9}{34}$
+\item Bin 1: $\frac{22}{35}, \frac{12}{34}$\\
+Bin 2: $\frac{20}{34}, \frac{14}{34}$\\
+Bin 3: $\frac{18}{34}, \frac{16}{34}$\\
+Bin 4: $\frac{9}{34}, \frac{8}{34}$
+\item Bin 1: $\frac{22}{35}, \frac{12}{34}$\\
+Bin 2: $\frac{20}{34}, \frac{14}{34}$\\
+Bin 3: $\frac{18}{34}, \frac{16}{34}$\\
+Bin 4: $\frac{9}{34}, \frac{8}{34}, \frac{5}{34}$
+\item Bin 1: $\frac{22}{35}, \frac{12}{34}$\\
+Bin 2: $\frac{20}{34}, \frac{14}{34}$\\
+Bin 3: $\frac{18}{34}, \frac{16}{34}$\\
+Bin 4: $\frac{9}{34}, \frac{8}{34}, \frac{5}{34}, \frac{4}{34}$
+\item Bin 1: $\frac{22}{35}, \frac{12}{34}$\\
+Bin 2: $\frac{20}{34}, \frac{14}{34}$\\
+Bin 3: $\frac{18}{34}, \frac{16}{34}$\\
+Bin 4: $\frac{9}{34}, \frac{8}{34}, \frac{5}{34}, \frac{4}{34}, \frac{3}{34}$
+\item Bin 1: $\frac{22}{35}, \frac{12}{34}$\\
+Bin 2: $\frac{20}{34}, \frac{14}{34}$\\
+Bin 3: $\frac{18}{34}, \frac{16}{34}$\\
+Bin 4: $\frac{9}{34}, \frac{8}{34}, \frac{5}{34}, \frac{4}{34}, \frac{3}{34}, \frac{2}{34}$
+\end{enumerate}
+\item best fit decreasing
+\begin{enumerate}
+\item Bin 1: $\frac{22}{35}$
+\item Bin 1: $\frac{22}{35}$\\
+Bin 2: $\frac{20}{34}$
+\item Bin 1: $\frac{22}{35}$\\
+Bin 2: $\frac{20}{34}$\\
+Bin 3: $\frac{18}{34}$
+\item Bin 1: $\frac{22}{35}$\\
+Bin 2: $\frac{20}{34}$\\
+Bin 3: $\frac{18}{34}, \frac{16}{34}$
+\item Bin 1: $\frac{22}{35}$\\
+Bin 2: $\frac{20}{34}, \frac{14}{34}$\\
+Bin 3: $\frac{18}{34}, \frac{16}{34}$
+\item Bin 1: $\frac{22}{35}, \frac{12}{34}$\\
+Bin 2: $\frac{20}{34}, \frac{14}{34}$\\
+Bin 3: $\frac{18}{34}, \frac{16}{34}$
+\item Bin 1: $\frac{22}{35}, \frac{12}{34}$\\
+Bin 2: $\frac{20}{34}, \frac{14}{34}$\\
+Bin 3: $\frac{18}{34}, \frac{16}{34}$\\
+Bin 4: $\frac{9}{34}$
+\item Bin 1: $\frac{22}{35}, \frac{12}{34}$\\
+Bin 2: $\frac{20}{34}, \frac{14}{34}$\\
+Bin 3: $\frac{18}{34}, \frac{16}{34}$\\
+Bin 4: $\frac{9}{34}, \frac{8}{34}$
+\item Bin 1: $\frac{22}{35}, \frac{12}{34}$\\
+Bin 2: $\frac{20}{34}, \frac{14}{34}$\\
+Bin 3: $\frac{18}{34}, \frac{16}{34}$\\
+Bin 4: $\frac{9}{34}, \frac{8}{34}, \frac{5}{34}$
+\item Bin 1: $\frac{22}{35}, \frac{12}{34}$\\
+Bin 2: $\frac{20}{34}, \frac{14}{34}$\\
+Bin 3: $\frac{18}{34}, \frac{16}{34}$\\
+Bin 4: $\frac{9}{34}, \frac{8}{34}, \frac{5}{34}, \frac{4}{34}$
+\item Bin 1: $\frac{22}{35}, \frac{12}{34}$\\
+Bin 2: $\frac{20}{34}, \frac{14}{34}$\\
+Bin 3: $\frac{18}{34}, \frac{16}{34}$\\
+Bin 4: $\frac{9}{34}, \frac{8}{34}, \frac{5}{34}, \frac{4}{34}, \frac{3}{34}$
+\item Bin 1: $\frac{22}{35}, \frac{12}{34}$\\
+Bin 2: $\frac{20}{34}, \frac{14}{34}$\\
+Bin 3: $\frac{18}{34}, \frac{16}{34}$\\
+Bin 4: $\frac{9}{34}, \frac{8}{34}, \frac{5}{34}, \frac{4}{34}, \frac{3}{34}, \frac{2}{34}$
+\end{enumerate}
+\end{enumerate}
+The optimal solution is most likely the off-line best fit increasing algorithm. It minimizes the bins to the optimal solution of $M = 4$ bins overall. 
+
+According to theorem 10.2 the optimal number of bins required to pack $I = 12$ items is never more than  $2M = 8$ and the optimal solution for next fit was $6$ which was within the bounds.
+
+According to theorem 10.3 for first fit the optimal number of bins required to pack $I = 12$ items is never more than  $\lceil \frac{17}{10} M \rceil = 7$ and the optimal solution for first fit was $5$ which was within the bounds.
+
+According to Weiss for best fit the optimal number of bins required to pack $I = 12$ items is approximately never more than 1.7 times as bad as the optimal $\lceil \frac{17}{10} M \rceil = 7$ and the optimal solution for first fit was $4$ which was within the bounds.
+
+According to theorem 10.4 for first fit decreasing the optimal number of bins required to pack $I = 12$ items is never more than  $\frac{4M + 1}{3} = 6$ and the optimal solution for first fit was $4$ which was within the bounds.
+
+Best fit decreasing has similar results to first fit, because as you pack the biggest items first it becomes easier and easier to minimize lost bin space by fitting the largest items possible together.
+
+\item Problem 2
+
+\begin{enumerate}
+ \item \begin{Verbatim}
+for i <- 1 to m
+	min_num(i) = 0
+for j from 1 to n
+	if stamp[j] < m
+		min_num(stamp[j]) += 1
+	elif stamp[j] == m
+		return 1
+	else
+		break
+
+for i <- 1 to m
+	if min_num(i) = 0
+		min <- infinity
+		for j <- 1 to n
+			if stamps[j] < i
+				if min > min_num(i - stamps[j])
+					min <- min_num(i - stamps[j])
+		min_num(i) <- 1 + min
+return min_num(m)
+\end{Verbatim}
+\item The time complexity is $\Theta (mn)$
+
+\item To augment the algorithm to keep track of the minimum number of stamps of each denomination an array could be added storing all the minimum values. The array would be of size m (saved\_ stamps). After generating the array, the generation of min\_ num(i) could be replaced with a call to the appropriate spot in saved\_ stamps.\\
+\begin{Verbatim}
+for i <- 1 to m
+	for j <- 1 to n
+		saved_stamps[i][j] = 0
+for i <- 1 to m
+	min <- infinity
+	for j <- 1 to n
+		if stamps[j] < i
+			if min > saved_stamps(i - stamps[j])
+				min <- saved_stamps[i - stamps[j]][j]
+		else if stamps[j] == i
+			min <- 0
+			saved_stamps[i][j] <- 0
+	saved_stamps[i][j] <- 1 + min
+return saved_stamps
+
+stamps_to_be_used_for(m)	
+	for j <- 1 to n
+		if(saved_stamps[m][j] > 0)
+			print saved_stamps[m][j]
+	return sum
+\end{Verbatim}
+\item The augmentation increases space complexity of the algorithm originally given in 2a. The changes do not affect the overall time complexity reported in 2b, it only affects the constant that the time complexity is multiplied by, by making the memory accesses more predictable and because more operations are done to store the coin values.
+
+
+\end{enumerate}
+\end{enumerate}
+2a Algorithm: NOTE that for each min\_ num you must recur and recalculate min\_ num each time. Resulting in a lot of recurrences/replications.
+min\_ num (1) = 1s\\
+min\_ num (2) = 1\\
+min\_ num (4) = 1\\
+min\_ num (17) = 1\\
+min\_ num (21) = 1\\
+min\_ num (1) = 1\\
+min\_ num (2) = 1\\
+min\_ num (3) = min(min\_ num (1), min\_ num (2) ) + 1= 2\\
+min\_ num (4) = 1\\
+min\_ num (5) = min(min\_ num (1), min\_ num (3), min\_ num(4) ) + 1= 2\\
+min\_ num (6) = min(min\_ num (5), min\_ num (4), min\_ num(2)) + 1= 2\\
+min\_ num (7) = min(min\_ num (6), min\_ num (5), min\_ num(3)) + 1= 3\\
+min\_ num (8) = min(min\_ num (7), min\_ num (6), min\_ num(4)) + 1= 2\\
+min\_ num (9) = min(min\_ num (8), min\_ num (7), min\_ num(5)) + 1= 3\\
+min\_ num (10) = min(min\_ num (9), min\_ num (8), min\_ num(6)) + 1= 3\\
+min\_ num (11) = min(min\_ num (10), min\_ num (9), min\_ num(7)) + 1= 4\\
+min\_ num (12) = min(min\_ num (11), min\_ num (10), min\_ num(8)) + 1= 3\\
+min\_ num (13) = min(min\_ num (12), min\_ num (11), min\_ num(9)) + 1= 4\\
+min\_ num (14) = min(min\_ num (13), min\_ num (12), min\_ num(10)) + 1= 4\\
+min\_ num (15) = min(min\_ num (14), min\_ num (13), min\_ num(11)) + 1= 5\\
+min\_ num (16) = min(min\_ num (15), min\_ num (14), min\_ num(12)) + 1= 4\\
+min\_ num (17) = 1\\
+min\_ num (18) = min(min\_ num (17), min\_ num (16), min\_ num(14), min\_ num(1)) + 1= 2\\
+min\_ num (19) = min(min\_ num (18), min\_ num (17), min\_ num(15), min\_ num(2)) + 1= 2\\
+min\_ num (20) = min(min\_ num (19), min\_ num (18), min\_ num(16), min\_ num(3)) + 1= 3\\
+min\_ num (21) = 1\\
+min\_ num (22) = min(min\_ num (21), min\_ num (20), min\_ num(18), min\_ num(5), min\_ num(1)) + 1= 2\\
+min\_ num (23) = min(min\_ num (22), min\_ num (21), min\_ num(19), min\_ num(6), min\_ num(2)) + 1= 2\\
+min\_ num (24) = min(min\_ num (23), min\_ num (22), min\_ num(20), min\_ num(7), min\_ num(3)) + 1= 3\\
+min\_ num (25) = min(min\_ num (24), min\_ num (23), min\_ num(21), min\_ num(8), min\_ num(4)) + 1= 2\\
+min\_ num (26) = min(min\_ num (25), min\_ num (24), min\_ num(22), min\_ num(9), min\_ num(5)) + 1= 3\\
+min\_ num (27) = min(min\_ num (26), min\_ num (25), min\_ num(23), min\_ num(10), min\_ num(6)) + 1= 3\\
+min\_ num (28) = min(min\_ num (27), min\_ num (26), min\_ num(24), min\_ num(11), min\_ num(7)) + 1= 4\\
+
+2c Algorithm (saved\_ stamps refers to the length of the array within that index position)\\
+min\_ num (1) = 0(original saved\_ stamps[1] value) + 1 = 1\\
+min\_ num (2) = 0(original saved\_ stamps[2] value) + 1 = 1\\
+min\_ num (3) = min(saved\_ stamps[1] (1), saved\_ stamps[2] (1)) + 1 = 2\\
+min\_ num (4) = 0(original saved\_ stamps[3] value) + 1= 1\\
+min\_ num (5) = min(saved\_ stamps[4] (1), saved\_ stamps[3] (2), saved\_ stamps[1] (1)) + 1 = 2\\
+min\_ num (6) = min(saved\_ stamps[5] (2), saved\_ stamps[4] (1), saved\_ stamps[2] (1)) + 1 = 2\\
+min\_ num (7) = min(saved\_ stamps[6] (2), saved\_ stamps[5] (2), saved\_ stamps[3] (2)) + 1= 3\\
+min\_ num (8) = min(saved\_ stamps[7] (3), saved\_ stamps[6] (2), saved\_ stamps[4] (1)) + 1= 2\\
+min\_ num (9) = min(saved\_ stamps[8] (2), saved\_ stamps[7] (3), saved\_ stamps[5] (2)) + 1= 3\\
+min\_ num (10) = min(saved\_ stamps[9] (3), saved\_ stamps[8] (2), saved\_ stamps[6] (2)) + 1= 3\\
+min\_ num (11) = min(saved\_ stamps[10] (3), saved\_ stamps[9] (3), saved\_ stamps[7] (3)) + 1= 4\\
+min\_ num (12) = min(saved\_ stamps[11] (4), saved\_ stamps[10] (3), saved\_ stamps[8] (2)) + 1= 3\\
+min\_ num (13) = min(saved\_ stamps[12] (4), saved\_ stamps[11] (4), saved\_ stamps[9] (3)) + 1= 4\\
+min\_ num (14) = min(saved\_ stamps[13] (4), saved\_ stamps[12] (3), saved\_ stamps[10] (3)) + 1= 4\\
+min\_ num (15) = min(saved\_ stamps[14] (4), saved\_ stamps[13] (4), saved\_ stamps[11] (4)) + 1= 5\\
+min\_ num (16) = min(saved\_ stamps[15] (5), saved\_ stamps[14] (4), saved\_ stamps[12] (3)) + 1= 4\\
+min\_ num (17) = 0(original saved\_ stamps[17] value) + 1= 1\\
+min\_ num (18) = min(saved\_ stamps[17] (1), saved\_ stamps[16] (4), saved\_ stamps[14] (4), saved\_ stamps[1] (1)) + 1= 2\\
+min\_ num (19) = min(saved\_ stamps[18] (2), saved\_ stamps[17] (1), saved\_ stamps[15] (5), saved\_ stamps[2] (1)) + 1= 2\\
+min\_ num (20) = min(saved\_ stamps[19] (2), saved\_ stamps[18] (2), saved\_ stamps[16] (4), saved\_ stamps[3] (2)) + 1= 3\\
+min\_ num (21) = 0(original saved\_ stamps[21] value) + 1= 1\\
+min\_ num (22) = min(saved\_ stamps[21] (1), saved\_ stamps[20] (2), saved\_ stamps[18] (2), saved\_ stamps[5] (2), saved\_ stamps[1] (1)) + 1= 2\\
+min\_ num (23) = min(saved\_ stamps[22] (2), saved\_ stamps[21] (1), saved\_ stamps[19] (2), saved\_ stamps[6] (2), saved\_ stamps[2] (1)) + 1= 2\\
+min\_ num (24) = min(saved\_ stamps[23] (2), saved\_ stamps[22] (2), saved\_ stamps[20] (3), saved\_ stamps[7] (3), saved\_ stamps[3] (2)) + 1= 3\\
+min\_ num (25) = min(saved\_ stamps[24] (3), saved\_ stamps[23] (2), saved\_ stamps[21] (1), saved\_ stamps[8] (2), saved\_ stamps[4] (1)) + 1= 2\\
+min\_ num (26) = min(saved\_ stamps[25] (2), saved\_ stamps[24] (3), saved\_ stamps[22] (2), saved\_ stamps[9] (3), saved\_ stamps[5] (2)) + 1= 3\\
+min\_ num (27) = min(saved\_ stamps[26] (3), saved\_ stamps[25] (2), saved\_ stamps[23] (2), saved\_ stamps[10] (3), saved\_ stamps[6] (2)) + 1= 3\\
+min\_ num (28) = min(saved\_ stamps[27] (3), saved\_ stamps[26] (3), saved\_ stamps[24] (3), saved\_ stamps[11] (4), saved\_ stamps[7] (3)) + 1= 4\\
+\end{document}

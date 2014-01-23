@@ -1,0 +1,103 @@
+\documentclass[11pt]{article}
+
+\usepackage{times,mathptm}
+\usepackage{pifont}
+\usepackage{exscale}
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{epsfig}
+\usepackage{alltt}
+\usepackage{tikz}
+\usetikzlibrary{trees,shapes,snakes}
+
+\textwidth 6.5in
+\textheight 9in
+\oddsidemargin -0.1in
+\topmargin -0.6in
+
+\parindent 0pt
+\parskip 0pt
+
+\begin{document}
+\rightline{Jessica Chen}
+\begin{LARGE}
+\centerline {\bf CSCI 303: Algorithms, HW 10}
+\end{LARGE}
+\vskip 0.25cm
+\centerline{Due: 3:30 pm, Wednesday, 11/7}
+
+\begin{enumerate}
+\item Problem 1\\
+\begin{enumerate}
+\item Adjacency Matrix
+\begin{tabular}{ccccccc}
+0&0&0&1&1&0&1\\
+0&0&1&0&1&1&0\\
+0&0&0&1&1&0&0\\
+0&0&0&0&1&0&0\\
+0&0&0&0&0&1&1\\
+0&0&0&0&0&0&1\\
+0&0&0&0&0&0&0\\
+\end{tabular}
+\item Adjacency List
+\begin{tabular}{c|ccccccc|}
+
+$v_1$&$v_4$&$v_5$&$v_7$&&&\\
+\hline
+$v_2$&$v_3$&$v_5$&$v_6$&&&\\
+\hline
+$v_3$&$v_4$&$v_5$&&&&\\
+\hline
+$v_4$&$v_5$&&&&&\\
+\hline
+$v_5$&$v_6$&$v_7$&&&&\\
+\hline
+$v_6$&$v_7$&&&&&\\
+\hline
+$v_7$&&&&&&\\
+\end{tabular}
+\item The graph is a directed acyclic graph.
+\end{enumerate}
+\item Problem 2
+Use Prim's algorithm, but instead of picking the minimum pick the edge with the max cost each time. It's not harder because you are just changing whether you choose the min or the max.
+\item Problem 3
+\begin{enumerate}
+\item \begin{tabular}{ccccccccc}
+\hline
+$v$&$known$&$d_v$& $p_v$\\
+\hline
+$v_1$& F & 0 & 0\\
+$v_2$& F & $\infty$ & 0\\
+$v_3$& F & $\infty$ & 0\\
+$v_4$& F & $\infty$ & 0\\
+$v_5$& F & $\infty$ & 0\\
+$v_6$& F & $\infty$ & 0\\
+$v_7$& F & $\infty$ & 0\\\hline
+\end{tabular}
+\item \begin{tabular}{ccccccccc}
+\hline
+$v$&$known$&$d_v$& $p_v$\\\hline
+$v_1$& T & 0 & 0\\
+$v_2$& F & $\infty$ & 0\\
+$v_3$& F & $\infty$ & 0\\
+$v_4$& F & 6 & $v_1$\\
+$v_5$& F & 1 & $v_1$\\
+$v_6$& F & $\infty$ & 0\\
+$v_7$& F & 7 & $v_1$\\\hline
+\end{tabular}
+\item \begin{tabular}{ccccccccc}
+\hline
+$v$&$known$&$d_v$& $p_v$\\\hline
+$v_1$& T & 0 & 0\\
+$v_2$& F & $\infty$ & 0\\
+$v_3$& F & $\infty$ & 0\\
+$v_4$& T & 6 & $v_1$\\
+$v_5$& F & 1 & $v_1$\\
+$v_6$& F & $\infty$ & 0\\
+$v_7$& F & 7 & $v_1$\\\hline
+\end{tabular}
+\end{enumerate}
+\end{enumerate}
+
+
+\end{document}

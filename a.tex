@@ -1,0 +1,76 @@
+\documentclass[11pt]{article}
+
+\usepackage{times,mathptm}
+\usepackage{pifont}
+\usepackage{exscale}
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{epsfig}
+\usepackage{alltt}
+\usepackage{tikz}
+\usetikzlibrary{trees,shapes,snakes}
+
+\textwidth 6.5in
+\textheight 9in
+\oddsidemargin -0.1in
+\topmargin -0.6in
+
+\parindent 0pt
+\parskip 0pt
+
+\begin{document}
+\tikzstyle{level 1}=[level distance=1.5cm, sibling distance=2.5cm]
+\tikzstyle{level 2}=[level distance=1cm, sibling distance=2cm]
+\tikzstyle{level 3}=[level distance=1cm, sibling distance=1.5cm]
+\tikzstyle{bag} = [circle, text width=4em, text centered, draw]
+\tikzstyle{decision} = [rectangle, minimum height=8pt, minimum width=8pt, fill, inner sep=0pt]
+\tikzstyle{choice} = [circle, minimum width=8pt, fill, inner sep=0pt]
+\tikzstyle{end} = [circle, text width=1em, text centered, draw, inner sep=0pt]
+
+\begin{tikzpicture}[grow=right, child anchor=west]
+\tiny
+\node[bag]{XOR}
+child {
+    node[decision]{TEST}
+    child {
+        node[bag]{A= 0}
+            child{
+                node[choice]{}
+                child {
+                    node[bag]{B=0}
+                    child {
+                        node[end]{0}
+                    }
+                }
+                child {
+                    node[bag]{B=1}
+                    child {
+                        node[end]{1}
+                    }
+                }
+            }
+    }
+    child {
+        node[bag]{A=1}
+            child{
+                node[choice]{}
+                child {
+                    node[bag]{B=0}
+                    child {
+                        node[end]{1}
+                    }
+                }
+                child {
+                    node[bag]{B=1}
+                    child {
+                        node[end]{0}
+                    }
+                }
+            }
+        }
+    };
+
+\end{tikzpicture}
+
+
+\end{document}

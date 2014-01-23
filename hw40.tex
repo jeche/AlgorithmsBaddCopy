@@ -1,0 +1,132 @@
+\documentclass{article}
+\usepackage{pst-tree}
+\begin{document}
+\begin{enumerate}
+\item Problem 1
+\begin{enumerate}
+\item
+\pstree[levelsep=60pt]{\Tdia{$k_1$, $+2$}}{
+	\Ttri{\Huge A}
+    \pstree{\Tdia{$k_3$, $-1$}}{
+        \pstree{\Tdia{$k_2$, $-1$}}{
+            \Ttri{\Huge B}
+             \Ttri{C}
+                    }
+        \Ttri{\Huge D}
+        }
+}
+\pstree[levelsep=60pt]{\Tdia{$k_1$, $+2$}}{
+	\Ttri{\Huge A}
+	        \pstree{\Tdia{$k_2$, $+1$}}{
+            \Ttri{\Huge B}
+    \pstree{\Tdia{$k_3$, $+1$}}{
+        \Ttri{C}
+        \Ttri{\Huge D}
+        }
+        }
+}
+\newline
+\pstree[levelsep=60pt]{\Tdia{$k_2$, $0$}}{
+	\pstree{\Tdia{$k_1$, $0$}}{
+	        \Ttri{\Huge A}
+            \Ttri{\Huge B}
+    
+        }
+        \pstree{\Tdia{$k_3$, $+1$}}{
+        \Ttri{C}
+        \Ttri{\Huge D}
+        }
+}
+\item
+\pstree[levelsep=60pt]{\Tdia{$k_1$, $+2$}}{
+	\Ttri{\Huge A}
+    \pstree{\Tdia{$k_3$, $-1$}}{
+        \pstree{\Tdia{$k_2$, $+1$}}{
+            \Ttri{B}
+             \Ttri{\Huge C}
+                    }
+        \Ttri{\Huge D}
+        }
+}
+\pstree[levelsep=60pt]{\Tdia{$k_1$, $+2$}}{
+	\Ttri{\Huge A}
+	        \pstree{\Tdia{$k_2$, $+2$}}{
+            \Ttri{B}
+    \pstree{\Tdia{$k_3$, $0$}}{
+        \Ttri{\Huge C}
+        \Ttri{\Huge D}
+        }
+        }
+}
+\newline
+\pstree[levelsep=60pt]{\Tdia{$k_2$, $0$}}{
+	\pstree{\Tdia{$k_1$, $-1$}}{
+	        \Ttri{\Huge A}
+            \Ttri{B}
+    
+        }
+        \pstree{\Tdia{$k_3$, $0$}}{
+        \Ttri{\Huge C}
+        \Ttri{\Huge D}
+        }
+}
+\item
+\pstree[levelsep=60pt]{\Tdia{$k_1$, $+2$}}{
+	\Tn	
+	\pstree{\Tdia{$k_3$, $-1$}}{
+    \Tdia{$k_2$, $0$}
+    \Tn
+    }
+}
+\pstree[levelsep=60pt]{\Tdia{$k_1$, $+2$}}{
+	\Tn	
+	\pstree{\Tdia{$k_2$, $+1$}}{
+	\Tn
+    \Tdia{$k_3$, $0$}
+    }
+}
+\newline
+\pstree[levelsep=60pt]{\Tdia{$k_2$, $0$}}{
+	\Tdia{$k_1$, $0$}
+    \Tdia{$k_3$, $0$}
+}
+\end{enumerate}
+\item Problem 2
+\begin{enumerate}
+\item
+\pstree[levelsep=25pt]{\Tcircle{65}}{
+	\Tn
+    \pstree{\Tcircle{76}}{
+        \pstree{\Tcircle{71}}{
+            \Tcircle{70}
+                    \pstree{\Tcircle{73}}{
+                    	\Tcircle{72}
+                    	\Tn
+                    }
+        }
+     \pstree{\Tcircle{79}}{
+     			\Tcircle{77}
+     	        \pstree{\Tcircle{82}}{
+     	        \Tn
+     	        \Tcircle{84}
+     	        }
+     	}
+    }
+}
+\item Height is $4$.
+\end{enumerate}
+\item Problem 3
+\pstree{\Tcircle{65, $0$}}
+\pstree{\Tcircle{$65$, $+1$}}{
+	\Tn
+	\Tcircle{$76$, $0$}
+}
+\pstree{\Tcircle{$65$, $+2$}}{
+	\Tn
+	\pstree{\Tcircle{$76$, $0$}}{
+	\Tcircle{72, 0}
+	\Tn
+	}
+}
+\end{enumerate}
+\end{document}

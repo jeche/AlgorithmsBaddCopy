@@ -1,0 +1,9 @@
+1. # of sets: S/(B*A)
+   # of index bits in the address = log_2(S/(B*A)
+   # of tag bits = k - log_2(S/(B*A)) - b
+
+2. There are 14 bits for the offset meaning that it uses 26 bits to represent the page # in the virtual address and 22 bits to represent the bits in the physical address. Add 4 for the valid and access right bits.
+   Therefore there are 2^26(22+4) bits in the cache which is 1744830464 bits or 208MB.
+
+3. Average memory access time = Hit Time + Miss Rate * Miss Penalty
+   AMAT = 1 + 0.2*(4+0.1*(0.05*100+20)) = 2.3

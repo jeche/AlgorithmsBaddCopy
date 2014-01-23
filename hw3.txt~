@@ -1,0 +1,12 @@
+1. # of sets: S/(B*A)
+   # of index bits in the address = log_2(S/(B*A)
+   # of tag bits = k - log_2(S/(B*A)) - b
+
+2. Consider a virtual memory system with the following properties:
+
+40-bit virtual byte address
+16 KB pages
+36 bit physical byte address What is the total size of the page table for each process on this processor, assuming that the valid, protection, dirty, and use bits take a total of 4 bits and that all the virtual pages are in use? (Assume that disk addresses are not stored in the page table.)
+
+3. Average memory access time = Hit Time + Miss Rate * Miss Penalty
+   AMAT = 1 + 0.2*(4+0.1*(0.05*100+20)) = 2.3
